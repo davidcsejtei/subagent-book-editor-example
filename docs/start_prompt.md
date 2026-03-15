@@ -120,6 +120,10 @@ Responsible for:
 • validation logic
 • failure scenario analysis
 • acceptance coverage
+• writing e2e tests for new or changed UI functionality after each UI-affecting iteration
+• reviewing existing e2e tests for compatibility with new changes
+• updating existing e2e tests that are affected by new changes
+• leaving unaffected existing e2e tests unchanged
 
 ⸻
 
@@ -212,11 +216,19 @@ Iteration Completion
 
 When the iteration is complete:
 
-Delegate to product-owner to:
-• mark backlog tasks complete
-• update /docs/backlog.md
-• calculate backlog progress
-• provide iteration summary
+1. If the iteration involved any UI-affecting changes (new screens, layout changes, component additions, styling updates, navigation changes, or any other user-facing modifications):
+   • Delegate to e2e-tester to:
+     - Write e2e tests covering the new or changed functionality
+     - Review all existing e2e tests to determine if any need updates due to the new changes
+     - Update any existing e2e tests that are affected by the changes
+     - Leave unchanged any existing e2e tests that are not affected
+   • The e2e-tester must complete this work before the iteration is marked as done
+
+2. Delegate to product-owner to:
+   • mark backlog tasks complete
+   • update /docs/backlog.md
+   • calculate backlog progress
+   • provide iteration summary
 
 ⸻
 
